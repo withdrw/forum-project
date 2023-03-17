@@ -11,14 +11,11 @@ function Header({signout, user}) {
                     </Link>
                 </h1>
             </div>
-            <div className='flex items-center'>
+            <div className='flex items-center justify-center'>
             <Link to="/login">
                 <button className='mx-5 h-10 px-5 cursor-pointer bg-[white]/5 rounded  '>Sign in</button>
             </Link>
-                <button className='mx-5 h-10 px-5 cursor-pointer bg-[gray]  rounded-lg '>Sign up</button>
-                 {user?.accessToken ?   <button onClick={signout} className='mx-5 h-10 px-5 cursor-pointer bg-[gray]  rounded-lg '>Sign out</button>:null}
-
-            
+                 {!user ? null :<button onClick={signout} className='mx-5 h-10 px-5 cursor-pointer bg-[gray]  rounded-lg '>Sign out</button>}
             </div>
         </nav>
     </div>

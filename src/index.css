@@ -65,7 +65,36 @@
         text-align: center;
         justify-content: center;
     }
+    .spinner{
+        width: 100%;
+        max-height: 90px;
+        height: 100%;
+        animation: spin 500ms 2 ;
+        color: white;
+        
+    }
+    @keyframes spin {
+        0%{
+            rotate: 0deg;
+        }
+        100%{
+            rotate: 360deg;
+        }
 
+        
+    }
+
+    .comment{
+    padding: 10px 12px 10px 12px ;
+    height: 50px;
+    margin-left: 40px;
+    color: black;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+        
+    }
 
 
 

@@ -5,29 +5,33 @@ import Modal from "../Components/Modal"
 import Post from '../Components/Post'
 
 
-function Home({printDoc, setSubtitle, setTitle, data,user}) {
+function Home({signout, printDoc, setSubtitle, setTitle, data,user, updatepost}) {
   const [modal, setmodal]= useState(false)
 
   const dataRef = data.map((data)=>{
     return(
       <Post
+      user={user}
+      data={data}
+      updatepost={updatepost}
       key={data.key}
       title={data.title}
       subtitle={data.subtitle}
+      username ={data.username}
       />
     )
   })
 
 
-
 console.log(modal)
-  return (<>
+  return (<> 
 <div className='h-screen'>
-<Header/>
+<Header signout={signout} user={user}/>
 
-<Modal setTitle={setTitle} printDoc={printDoc} setSubtitle={setSubtitle} setShow={setmodal}  modal={modal}/>
+
+ <Modal data={data} setTitle={setTitle} printDoc={printDoc} setSubtitle={setSubtitle} setShow={setmodal}  modal={modal}/>
 <div className='flex justify-end items-start color text-[orange] '>
-  <div className=' w-[100%] flex flex-col items-center justify-center'>
+  <div className=' w-[100%] overflow-hidden flex flex-col items-center justify-center'>
     {dataRef}
   </div>
   {user?
